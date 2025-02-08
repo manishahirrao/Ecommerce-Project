@@ -13,18 +13,20 @@ function Navbar() {
   return (
     <>
       <div className=" flex justify-between items-center py-2 font-medium ">
-        <div className="flex  items-center justify-center">
-          <img
-            src={assets.l}
-            className="md:w-22 md:h-20 w-16 h-16"
-            alt="logo"
-          />
-          <img
-            src={assets.k}
-            className="md:w-22 md:h-20 w-20 h-16"
-            alt="logo"
-          />
-        </div>
+        <Link to={"./"}>
+          <div className="flex  items-center justify-center">
+            <img
+              src={assets.l}
+              className="md:w-22 md:h-20 w-16 h-16"
+              alt="logo"
+            />
+            <img
+              src={assets.k}
+              className="md:w-22 md:h-20 w-20 h-16"
+              alt="logo"
+            />
+          </div>
+        </Link>
         <ul className="sm:flex  items-center gap-4 lg:gap-8 font-semibold  hidden text-xl md:text-2xl ">
           <NavLink to={"/"} className="flex flex-col items-center gap-1 ">
             <p>Home</p>
