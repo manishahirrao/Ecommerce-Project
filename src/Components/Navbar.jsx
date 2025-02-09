@@ -55,7 +55,7 @@ function Navbar() {
           <img src={assets.l} />
           <img className="" src={assets.k} />
         </div> */}
-        <div className="flex items-center justify-between gap-2 pl-12 lg:gap-5">
+        <div className="flex items-center justify-between gap-2 pl-6 lg:gap-5">
           <IoSearch className="text-3xl cursor-pointer hover:text-gray-600" />
           <div className="group relative">
             <MdAccountCircle className="text-3xl cursor-pointer hover:text-gray-600 " />
