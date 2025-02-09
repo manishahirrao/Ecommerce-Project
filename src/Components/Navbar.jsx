@@ -17,17 +17,17 @@ function Navbar() {
           <div className="flex  items-center justify-center">
             <img
               src={assets.l}
-              className="md:w-22 md:h-20 w-16 h-16"
+              className="md:w-22 md:h-20 w-12 h-12"
               alt="logo"
             />
             <img
               src={assets.k}
-              className="md:w-22 md:h-20 w-20 h-16"
+              className="md:w-22 md:h-20 w-16 h-12"
               alt="logo"
             />
           </div>
         </Link>
-        <ul className="sm:flex  items-center gap-4 lg:gap-8 font-semibold  hidden text-xl md:text-2xl ">
+        <ul className="sm:flex  items-center  lg:gap-8 font-semibold  hidden text-xl md:text-2xl ">
           <NavLink to={"/"} className="flex flex-col items-center gap-1 ">
             <p>Home</p>
             <hr className="w-full border-none h-[3px] bg-black hidden " />
@@ -55,7 +55,7 @@ function Navbar() {
           <img src={assets.l} />
           <img className="" src={assets.k} />
         </div> */}
-        <div className="flex items-center justify-between gap-3 lg:gap-5">
+        <div className="flex items-center justify-between gap-2 pl-12 lg:gap-5">
           <IoSearch className="text-3xl cursor-pointer hover:text-gray-600" />
           <div className="group relative">
             <MdAccountCircle className="text-3xl cursor-pointer hover:text-gray-600 " />
@@ -113,16 +113,48 @@ function Navbar() {
         <hr className="h-0.5 bg-gray-500 mt-2" />
 
         <div className="flex flex-col justify-between text-3xl mt-2 gap-1 ">
-          <NavLink className="shadow shadow-gray-400 pl-2  " to={"/"}>
+          <NavLink
+            onClick={() => {
+              {
+                visible ? <Home /> : "";
+              }
+            }}
+            className="shadow shadow-gray-400 pl-2  "
+            to={"/"}
+          >
             Home
           </NavLink>
-          <NavLink className="shadow shadow-gray-400 pl-2  " to={"/About"}>
+          <NavLink
+            onClick={() => {
+              {
+                visible ? <About /> : "";
+              }
+            }}
+            className="shadow shadow-gray-400 pl-2  "
+            to={"/About"}
+          >
             About
           </NavLink>
-          <NavLink className="shadow shadow-gray-400 pl-2  " to={"/Collection"}>
+          <NavLink
+            onClick={() => {
+              {
+                visible ? <Collection /> : "";
+              }
+            }}
+            className="shadow shadow-gray-400 pl-2  "
+            to={"/Collection"}
+          >
             Collection
           </NavLink>
-          <NavLink className="shadow shadow-gray-400 pl-2  " to={"/Contact"}>
+          <NavLink
+            onClick={() => {
+              {
+                visible ? <Contact /> : "";
+              }
+            }}
+            className="shadow shadow-gray-400 pl-2  "
+            to={"/Contact"}
+          >
             Contact
           </NavLink>
         </div>

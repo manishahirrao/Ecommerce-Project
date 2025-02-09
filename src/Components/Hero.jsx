@@ -7,7 +7,7 @@ function Hero() {
       <div className="mt-8 border-[1px] border-black rounded  md:flex  justify-between items-center">
         {/* hero leftsection */}
         <div className="flex flex-col justify-center items-center md:ml-40 ml-20 md:gap-3 gap-1 ">
-          <div className="flex justify-center items-center gap-2 pr-10">
+          <div className="flex justify-center items-center gap-2 md:pr-2 pr-9">
             <hr className="h-[3px] bg-black md:w-18 w-10" />
             <p className="md:text-2xl font-light">OUR BESTSELLERS</p>
           </div>
