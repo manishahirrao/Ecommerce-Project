@@ -3,38 +3,43 @@ import { assets } from "../assets/frontend_assets/assets";
 
 function Footer() {
   return (
-    <div className="flex  justify-between gap-16 mt-26 ">
-      <div className="flex flex-col w-[500px]">
-        <div className="flex items-center">
-          <img className="h-8 w-8" src={assets.l} />
-          <img className="h-10 w-18" src={assets.k} />
+    <>
+      <div className="flex  justify-between md:gap-3 gap-6 md:px-12 md:mt-36 mt-26 md:flex-row flex-col ">
+        <div className="flex flex-col ">
+          <div className="flex items-center">
+            <img className="md:h-8 h-6 w-8" src={assets.l} />
+            <img className="md:h-10 h-6 w-18" src={assets.k} />
+          </div>
+          <p className="pt-4 ">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eaque,
+            tempora laudantium et laborum iusto cupiditate doloremque
+          </p>
         </div>
-        <p className="pt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eaque,
-          tempora laudantium et laborum iusto cupiditate doloremque repudiandae
-          maxime non quod labore omnis vero velit aut minus! Asperiores, ipsam
-          autem?
-        </p>
+
+        <div className="flex flex-col md:gap-4 gap-2">
+          <span className="font-semibold md:text-2xl ">Company</span>
+          <ul className="font-light ">
+            <li>Home</li>
+            <li>About us</li>
+            <li>Delivery</li>
+            <li>Privacy policy</li>
+          </ul>
+        </div>
+
+        <div className="flex flex-col  ">
+          <span className="font-semibold md:text-2xl ">GET IN TOUCH</span>
+          <span className="flex flex-col md:pt-4 pt-2  ">
+            <p>+1-212-456-7890</p>
+            <p>contact@ecommerce.com</p>
+          </span>
+        </div>
       </div>
 
-      <div className="flex flex-col gap-4">
-        <span className="font-semibold text-2xl">Company</span>
-        <ul className="font-light ">
-          <li>Home</li>
-          <li>About us</li>
-          <li>Delivery</li>
-          <li>Privacy policy</li>
-        </ul>
-      </div>
-
-      <div className="flex flex-col  ">
-        <span className="font-semibold text-2xl ">GET IN TOUCH</span>
-        <span className="flex flex-col pt-4">
-          <p className="">+1-212-456-7890</p>
-          <p>contact@ecommerce.com</p>
-        </span>
-      </div>
-    </div>
+      <hr className=" bg-gray-600 w-full md:mt-12 mt-4" />
+      <p className="flex flex-col items-center md:pt-4 pt-2 md:text-xl  font-light ">
+        Copyright 2024 &copy; Ecommerce.com. All rights Reserved
+      </p>
+    </>
   );
 }
 

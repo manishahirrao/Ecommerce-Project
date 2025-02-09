@@ -5,11 +5,11 @@ function NewsLetterbox() {
     e.preventDefault();
   };
   return (
-    <div className="flex flex-col gap-3 items-center mt-20 ">
-      <p className="text-3xl font-semibold pl-26">
+    <div className="flex flex-col  items-center mt-24 ">
+      <p className="md:text-3xl font-semibold md:pl-26 ">
         Subscribe now & get 20% off
       </p>
-      <p className="text-gray-600 ">
+      <p className="text-gray-600 mt-2 sm:pl-10">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem atque
         voluptas m,njkcdbcj njkdvnjk
       </p>
@@ -17,10 +17,10 @@ function NewsLetterbox() {
         onSubmit={() => {
           submitHandler;
         }}
-        className="flex items-center  w-[500px] mt-2 pl-20"
+        className="flex items-center  md:w-[500px] md:mt-12 mt-8 md:pl-20"
       >
         <input
-          className="border-1 border-b-black p-2 w-[900px] "
+          className="border-1 border-b-black p-2 md:w-[900px] "
           type="email"
           placeholder="Enter your email"
           required
