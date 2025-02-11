@@ -94,7 +94,7 @@ function Navbar() {
       <hr className="bg-gray-500 h-0.5 shadow-sm shadow-gray-500" />
       {/* sidebar */}
       <div
-        className={`fixed h-screen  bg-white transition-all top-0 text-black bottom-0 right-0 ${
+        className={`fixed h-screen  bg-white transition-all top-0 z-20 text-black bottom-0 right-0 ${
           visible ? "w-full" : "w-0"
         }`}
       >

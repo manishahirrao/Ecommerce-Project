@@ -4,7 +4,7 @@ import { assets } from "../assets/frontend_assets/assets";
 function Footer() {
   return (
     <>
-      <div className="flex  justify-between md:gap-3 gap-6 md:px-12 md:mt-36 mt-26 md:flex-row flex-col ">
+      <div className="flex  justify-between md:gap-12 gap-6  md:mt-36 mt-26 md:flex-row flex-col ">
         <div className="flex flex-col ">
           <div className="flex items-center">
             <img className="md:h-8 h-6 w-8" src={assets.l} />
@@ -12,7 +12,11 @@ function Footer() {
           </div>
           <p className="pt-4 ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eaque,
-            tempora laudantium et laborum iusto cupiditate doloremque
+            tempora laudantium et laborum iusto cupiditate doloremque Lorem
+            ipsum dolor, sit amet consectetur adipisicing elit. Harum reiciendis
+            alias nostrum, culpa sequi maxime consequuntur iure ducimus dolores
+            voluptates vero velit aut sit consequatur commodi eveniet? Quod, cum
+            at?
           </p>
         </div>
 
@@ -36,7 +40,7 @@ function Footer() {
       </div>
 
       <hr className=" bg-gray-600 w-full md:mt-12 mt-4" />
-      <p className="flex flex-col items-center md:pt-4 pt-2 md:text-xl  font-light ">
+      <p className="flex flex-col items-center md:pt-2 pt-1  md:pb-1 font-light ">
         Copyright 2024 &copy; Ecommerce.com. All rights Reserved
       </p>
     </>

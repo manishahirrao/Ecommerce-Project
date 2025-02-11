@@ -17,7 +17,7 @@ function NewsLetterbox() {
         onSubmit={() => {
           submitHandler;
         }}
-        className="flex items-center  md:w-[500px] md:mt-12 mt-8 md:pl-20"
+        className="flex items-center gap-0.5 md:w-[500px] md:mt-12 mt-8 md:pl-20"
       >
         <input
           className="border-1 border-b-black p-2 md:w-[900px] "
