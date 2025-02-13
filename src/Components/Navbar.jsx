@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ShopContext } from "../Context/ShopContext.jsx";
 import { assets } from "../assets/frontend_assets/assets.js";
 import { Link, NavLink } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import { BsFillMenuButtonWideFill } from "react-icons/bs";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
+import Searchbar from "./Searchbar.jsx";
 
 function Navbar() {
   const [visible, setvisible] = useState(false);
+
+  const { showsearch, setshowsearch } = useContext(ShopContext);
 
   return (
     <>
@@ -51,12 +55,14 @@ function Navbar() {
             <hr className="w-full border-none h-[3px] bg-black hidden " />
           </NavLink>
         </ul>
-        {/* <div className="sm:hidden w-16 flex items-center justify-center ">
-          <img src={assets.l} />
-          <img className="" src={assets.k} />
-        </div> */}
+
         <div className="flex items-center justify-between gap-2 pl-6 lg:gap-5">
-          <IoSearch className="text-3xl cursor-pointer hover:text-gray-600" />
+          <IoSearch
+            onClick={() => {
+              setshowsearch(!showsearch);
+            }}
+            className="text-3xl cursor-pointer hover:text-gray-600"
+          />
           <div className="group relative">
             <MdAccountCircle className="text-3xl cursor-pointer hover:text-gray-600 " />
             <div className="group-hover:block hidden absolute dropdown-menu left-0 pt-2">
@@ -75,9 +81,6 @@ function Navbar() {
           </div>
           <Link to={"./Cart"}>
             <FaShoppingCart className="text-3xl cursor-pointer hover:text-gray-600" />
-            {/* <p className="absolute leading-0 top-[40px] w-4 text-red-500 text-center aspect-square rounded-full text-[15px] ">
-              10
-            </p> */}
           </Link>
         </div>
 
@@ -91,7 +94,10 @@ function Navbar() {
           <BsFillMenuButtonWideFill />
         </div>
       </div>
-      <hr className="bg-gray-500 h-0.5 shadow-sm shadow-gray-500" />
+
+      <Searchbar />
+      <hr className="bg-gray-500 h-0.5 mt-2 shadow-sm shadow-gray-500" />
+
       {/* sidebar */}
       <div
         className={`fixed h-screen  bg-white transition-all top-0 z-20 text-black bottom-0 right-0 ${

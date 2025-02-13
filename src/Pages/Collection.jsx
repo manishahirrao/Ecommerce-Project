@@ -5,7 +5,7 @@ import Title from "../Components/Title.jsx";
 import Product_Items from "../Components/Product_Items.jsx";
 
 const ProductFilter = () => {
-  const { products } = useContext(ShopContext);
+  const { products, search, showsearch } = useContext(ShopContext);
   const [filter, setfilter] = useState(false);
   const [filterProduct, setfilterProduct] = useState([]);
   const [category, setcategory] = useState([]);
@@ -30,6 +30,11 @@ const ProductFilter = () => {
 
   const applyfilter = () => {
     let productcopy = products.slice();
+    if (search && showsearch) {
+      productcopy = productcopy.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
+    }
     if (category.length > 0) {
       productcopy = productcopy.filter((item) =>
         category.includes(item.category)
@@ -70,16 +75,16 @@ const ProductFilter = () => {
 
   useEffect(() => {
     applyfilter();
-  }, [category, subCategory]);
+  }, [category, subCategory, search, showsearch]);
 
   return (
     <div className="md:mt-12 mt-10 flex md:gap-16 gap-3">
       <div>
-        <p className="md:text-2xl font-bold py-8 flex items-center">
+        <p className="md:text-2xl md:font-bold font-semibold text-sm py-8 flex items-center">
           FILTERS
           <img
             onClick={dropdown}
-            className={`h-[20px] sm:hidden ${filter ? "rotate-90" : ""}`}
+            className={`h-[16px] ml-1  sm:hidden ${filter ? "rotate-90" : ""}`}
             src={assets.dropdown_icon}
             alt="Dropdown icon"
           />
@@ -126,15 +131,15 @@ const ProductFilter = () => {
       </div>
 
       {/* Right side */}
-      <div className="flex-1">
-        <div className="flex md:flex-row flex-col items-center justify-between md:mt-8 mt-6">
+      <div className="flex-1 ">
+        <div className="flex md:flex-row flex-col items-start justify-between md:mt-8 mt-6 ">
           <Title text1={"ALL"} text2={"COLLECTIONS"} />
           {/* Product sort */}
           <select
             onChange={(e) => {
               setsorttype(e.target.value);
             }}
-            className="border border-black p-2 w-18 md:w-auto"
+            className="border border-black md:p-2 p-1  w-15.5 md:text-sm text-sm md:w-auto"
           >
             <option value="relevant">Sort By : Relevent</option>
             <option value="low-high">Sort By : low to high</option>
@@ -143,7 +148,7 @@ const ProductFilter = () => {
         </div>
 
         {/* Map product */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-4 py-6 w-[220px] md:w-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-4 py-6 w-[200px] md:w-auto">
           {filterProduct.map((item, index) => (
             <Product_Items
               key={index}

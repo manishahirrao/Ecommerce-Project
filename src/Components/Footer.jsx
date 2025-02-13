@@ -4,7 +4,7 @@ import { assets } from "../assets/frontend_assets/assets";
 function Footer() {
   return (
     <>
-      <div className="flex  justify-between md:gap-12 gap-6  md:mt-36 mt-26 md:flex-row flex-col ">
+      <div className="flex  justify-between md:gap-24 gap-6  md:mt-36 mt-26 md:flex-row flex-col ">
         <div className="flex flex-col ">
           <div className="flex items-center">
             <img className="md:h-8 h-6 w-8" src={assets.l} />
@@ -31,7 +31,7 @@ function Footer() {
         </div>
 
         <div className="flex flex-col  ">
-          <span className="font-semibold md:text-2xl ">GET IN TOUCH</span>
+          <span className="font-semibold md:text-xl ">GET IN TOUCH</span>
           <span className="flex flex-col md:pt-4 pt-2  ">
             <p>+1-212-456-7890</p>
             <p>contact@ecommerce.com</p>

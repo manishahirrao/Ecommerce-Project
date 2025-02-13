@@ -25,7 +25,7 @@ function NewsLetterbox() {
           placeholder="Enter your email"
           required
         />
-        <button className="bg-red-800 rounded p-2  cursor-pointer">
+        <button className="bg-red-600 rounded p-2 md:text-xl cursor-pointer ">
           Subscribe
         </button>
       </form>
