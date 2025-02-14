@@ -12,7 +12,7 @@ import Searchbar from "./Searchbar.jsx";
 function Navbar() {
   const [visible, setvisible] = useState(false);
 
-  const { showsearch, setshowsearch } = useContext(ShopContext);
+  const { showsearch, setshowsearch, getcartcount } = useContext(ShopContext);
 
   return (
     <>
@@ -79,8 +79,11 @@ function Navbar() {
               </div>
             </div>
           </div>
-          <Link to={"./Cart"}>
-            <FaShoppingCart className="text-3xl cursor-pointer hover:text-gray-600" />
+          <Link className="flex items-baseline relative" to={"./Cart"}>
+            <FaShoppingCart className="text-3xl cursor-pointer  hover:text-gray-600" />
+            <p className="bg-gray-600 rounded-full text-white  px-1">
+              {getcartcount()}
+            </p>
           </Link>
         </div>
 

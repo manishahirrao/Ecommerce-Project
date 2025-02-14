@@ -28,23 +28,25 @@ const Product = () => {
 
   return productdata ? (
     <>
-      <div className="mt-20 flex gap-12 ">
+      <div className="md:mt-20 mt-5 flex md:flex-row flex-col gap-12 ">
         {/* Products image */}
-        <div className="flex flex-col items-start gap-2 w-[120px]">
-          {productdata.image.map((item, index) => (
-            <img onClick={() => setimage(item)} src={item} key={index} />
-          ))}
-        </div>
+        <div className="flex items-center gap-4">
+          <div className="flex flex-col items-start gap-2 md:w-[120px] w-[60px]  ">
+            {productdata.image.map((item, index) => (
+              <img onClick={() => setimage(item)} src={item} key={index} />
+            ))}
+          </div>
 
-        {/* prduct big image */}
-        <div className="w-[40%]">
-          <img className="h-auto w-full" src={image} />{" "}
+          {/* prduct big image */}
+          <div className="  md:w-[500px] w-[80%] ">
+            <img className="h-auto w-full" src={image} />{" "}
+          </div>
         </div>
 
         {/* Product info */}
         <div className="flex gap-2 flex-col">
           <h1 className="text-2xl font-extrabold ">{productdata.name}</h1>
-          <div className="flex gap-0.5">
+          <div className="flex gap-0.5 ">
             <img className="w-[30px]" src={assets.star_icon} />
             <img className="w-[30px]" src={assets.star_icon} />
             <img className="w-[30px]" src={assets.star_icon} />
@@ -53,7 +55,7 @@ const Product = () => {
             <p className="font-sm pl-2 text-xl">(127)</p>
           </div>
           <p className="text-3xl font-bold mt-4">{currency}200</p>
-          <p className="w-1/2">{productdata.description}</p>
+          <p className="md:w-1/2 w-[350px]">{productdata.description}</p>
           <p className="mt-2 font-semibold text-xl  mb-2">Select Size</p>
           <div className="flex gap-2  font-medium  ">
             {productdata.sizes.map((item, index) => (
@@ -86,7 +88,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className=" mt-8 pl-20  shadow shadow-gray-300 ">
+      <div className=" mt-8 md:pl-20  shadow shadow-gray-300 ">
         <div className="flex items-center  text-2xl  cursor-pointer gap-6 border-b border-b-black">
           <b className="border-b-black border-b ">Description</b>
           <p>Reviews (122)</p>

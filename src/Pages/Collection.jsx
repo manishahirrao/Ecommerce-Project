@@ -125,7 +125,7 @@ const ProductFilter = () => {
           </p>
           <p>
             <input type="checkbox" onChange={subtoggle} value={"Winterwear"} />{" "}
-            Waterwear
+            Winterwear
           </p>
         </div>
       </div>
