@@ -11,6 +11,7 @@ const ProductFilter = () => {
   const [category, setcategory] = useState([]);
   const [subCategory, setsubCategory] = useState([]);
   const [sorttype, setsorttype] = useState("relevant");
+  const [num, setnum] = useState();
 
   const toggle = (e) => {
     if (category.includes(e.target.value)) {
@@ -65,6 +66,10 @@ const ProductFilter = () => {
     }
   };
 
+  const number = () => {
+    setnum(num + 1);
+  };
+
   const dropdown = () => {
     setfilter(!filter);
   };
@@ -78,9 +83,9 @@ const ProductFilter = () => {
   }, [category, subCategory, search, showsearch]);
 
   return (
-    <div className="md:mt-12 mt-10 flex md:gap-16 gap-3">
+    <div className="md:mt-12 mt-2 flex flex-col md:flex-row md:gap-16 gap-3">
       <div>
-        <p className="md:text-2xl md:font-bold font-semibold text-sm py-8 flex items-center">
+        <p className="md:text-2xl md:font-bold font-semibold  md:py-8 text-xl flex items-center">
           FILTERS
           <img
             onClick={dropdown}
@@ -92,7 +97,7 @@ const ProductFilter = () => {
 
         {/* Categories */}
         <div
-          className={`flex flex-col items-start border border-gray-700 md:w-[250px] w-[120px] md:px-5 px-1 py-2 gap-1 ${
+          className={`flex flex-col items-start border border-gray-700 md:w-[250px] w-full md:px-5 px-1 py-2 gap-1 ${
             filter ? "" : "hidden"
           } sm:block`}
         >
@@ -110,7 +115,7 @@ const ProductFilter = () => {
 
         {/* Type */}
         <div
-          className={`flex flex-col items-start border border-gray-700 md:w-[250px] w-[120px] md:px-5 px-1 py-2 gap-1 mt-6 ${
+          className={`flex flex-col items-start border border-gray-700 md:w-[250px] w-full md:px-5 px-1 py-2 gap-1 md:mt-6 mt-2 ${
             filter ? "" : "hidden"
           } sm:block`}
         >
@@ -128,18 +133,37 @@ const ProductFilter = () => {
             Winterwear
           </p>
         </div>
+
+        {/* Sorting */}
+        <div
+          className={`flex flex-col items-start border border-gray-700 md:w-[250px] w-full md:px-5 px-1 py-2 gap-1 md:mt-6 mt-2 ${
+            filter ? "" : "hidden"
+          } sm:hidden`}
+        >
+          <p className="md:text-xl font-semibold">Sort By</p>
+          <select
+            onChange={(e) => {
+              setsorttype(e.target.value);
+            }}
+            className="border border-black md:p-2 w-1/2 md:w-auto md:text-xl"
+          >
+            <option value="relevant">Relevent</option>
+            <option value="low-high">low to high</option>
+            <option value="high-low">high to low</option>
+          </select>
+        </div>
       </div>
 
       {/* Right side */}
-      <div className="flex-1 ">
-        <div className="flex md:flex-row flex-col items-start justify-between md:mt-8 mt-6 ">
+      <div className="flex-1">
+        <div className="flex md:flex-row flex-col items-start justify-between md:mt-8 ">
           <Title text1={"ALL"} text2={"COLLECTIONS"} />
           {/* Product sort */}
           <select
             onChange={(e) => {
               setsorttype(e.target.value);
             }}
-            className="border border-black md:p-2 p-1  w-15.5 md:text-sm text-sm md:w-auto"
+            className="border border-black p-2 w-full md:w-auto md:text-sm text-sm hidden sm:block"
           >
             <option value="relevant">Sort By : Relevent</option>
             <option value="low-high">Sort By : low to high</option>
@@ -148,7 +172,12 @@ const ProductFilter = () => {
         </div>
 
         {/* Map product */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-4 py-6 w-[200px] md:w-auto">
+        <div
+          onClick={() => {
+            number();
+          }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-4 py-6"
+        >
           {filterProduct.map((item, index) => (
             <Product_Items
               key={index}

@@ -4,7 +4,7 @@ import { assets } from "../assets/frontend_assets/assets";
 function Footer() {
   return (
     <>
-      <div className="flex  justify-between md:gap-24 gap-6  md:mt-36 mt-26 md:flex-row flex-col ">
+      <div className="flex  justify-between md:gap-24 gap-6   mt-16 md:flex-row flex-col ">
         <div className="flex flex-col ">
           <div className="flex items-center">
             <img className="md:h-8 h-6 w-8" src={assets.l} />

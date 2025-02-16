@@ -4,6 +4,7 @@ import { ShopContext } from "../Context/ShopContext";
 import { useParams } from "react-router-dom";
 import { assets } from "../assets/frontend_assets/assets";
 import RelatedProducts from "../Components/RelatedProducts";
+import Cart from "./Cart";
 
 const Product = () => {
   const { productId } = useParams();
@@ -54,7 +55,10 @@ const Product = () => {
             <img className="w-[30px]" src={assets.star_dull_icon} />
             <p className="font-sm pl-2 text-xl">(127)</p>
           </div>
-          <p className="text-3xl font-bold mt-4">{currency}200</p>
+          <p className="text-3xl font-bold mt-4">
+            {currency}
+            {productdata.price}
+          </p>
           <p className="md:w-1/2 w-[350px]">{productdata.description}</p>
           <p className="mt-2 font-semibold text-xl  mb-2">Select Size</p>
           <div className="flex gap-2  font-medium  ">

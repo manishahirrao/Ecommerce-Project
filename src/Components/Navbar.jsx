@@ -12,7 +12,8 @@ import Searchbar from "./Searchbar.jsx";
 function Navbar() {
   const [visible, setvisible] = useState(false);
 
-  const { showsearch, setshowsearch, getcartcount } = useContext(ShopContext);
+  const { showsearch, setshowsearch, getcartcount, updatequantity } =
+    useContext(ShopContext);
 
   return (
     <>
