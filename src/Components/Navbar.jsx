@@ -81,10 +81,14 @@ function Navbar() {
             </div>
           </div>
           <Link className="flex items-baseline relative" to={"./Cart"}>
-            <FaShoppingCart className="text-3xl cursor-pointer  hover:text-gray-600" />
-            <p className="bg-gray-600 rounded-full text-white  px-1">
-              {getcartcount()}
-            </p>
+            <div>
+              <FaShoppingCart className="text-3xl cursor-pointer  hover:text-gray-600" />
+            </div>
+            <div className=" rounded-full  ">
+              <sup className="ml-[-8px] absolute mt-[1px] text-yellow-700 font-extrabold text-xl">
+                {getcartcount()}
+              </sup>
+            </div>
           </Link>
         </div>
 

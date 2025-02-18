@@ -8,10 +8,10 @@ import ShopContextProvider from "./Context/ShopContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ShopContextProvider>
-      <Router>
+    <Router>
+      <ShopContextProvider>
         <App />
-      </Router>
-    </ShopContextProvider>
+      </ShopContextProvider>
+    </Router>
   </StrictMode>
 );

@@ -3,9 +3,10 @@ import { ShopContext } from "../Context/ShopContext";
 import Title from "../Components/Title";
 import Product_Items from "../Components/Product_Items";
 import { assets } from "../assets/frontend_assets/assets.js";
+import Carttotal from "../Components/Carttotal.jsx";
 
 function Cart() {
-  const { products, currency, cartitem, updatequantity } =
+  const { products, currency, cartitem, updatequantity, navigate } =
     useContext(ShopContext);
   const [cartdata, setcartdata] = useState([]);
 
@@ -47,16 +48,16 @@ function Cart() {
                   src={productdata.image[0]}
                 />
               </div>
-              <div className=" md:p-2 p-1 md:gap-3 w-full ">
-                <div className="md:font-semibold  md:text-xl text-sm flex items-center justify-start  ">
+              <div className=" md:p-2  md:gap-3 w-full ">
+                <div className="md:font-semibold  md:text-xl text-md flex items-center justify-start  ">
                   <p>{productdata.name}</p>
                 </div>
-                <div className="flex gap-[300px] py-4  items-center ">
+                <div className="flex md:gap-[300px] gap-10 py-4  items-center ">
                   <p className="">
                     {currency}
                     {productdata.price}
                   </p>
-                  <p className="">Size : {item.size}</p>
+                  <p className=""> {item.size}</p>
                   <input
                     className="md:w-[50px] w-[40px] border-1  border-gray-400"
                     type="number"
@@ -76,7 +77,7 @@ function Cart() {
                     onClick={() => {
                       updatequantity(item._id, item.size, 0);
                     }}
-                    className="w-[20px] cursor-pointer ml-15"
+                    className="w-[20px] cursor-pointer md:ml-15 ml-12"
                     src={assets.bin_icon}
                   />
                 </div>
@@ -84,6 +85,22 @@ function Cart() {
             </div>
           );
         })}
+      </div>
+
+      {/* CART TOTAL */}
+      <div className="flex  md:justify-end mt-6 ">
+        <div>
+          <Carttotal />
+
+          <div className="bg-black text-white mt-4 text-center py-2 hover:bg-gray-500 hover:text-black w-[300px] rounded">
+            <button
+              onClick={() => navigate("/place-order")}
+              className="text-2xl font-bold cursor-pointer "
+            >
+              Proceed To Checkout
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
