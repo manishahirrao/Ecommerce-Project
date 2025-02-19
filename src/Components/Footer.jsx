@@ -39,7 +39,7 @@ function Footer() {
         </div>
       </div>
 
-      <hr className=" bg-gray-600 w-full md:mt-12 mt-4" />
+      <hr className=" bg-gray-600 w-full md:mt-2 mt-1" />
       <p className="flex flex-col items-center md:pt-2 pt-1  md:pb-1 font-light ">
         Copyright 2024 &copy; Ecommerce.com. All rights Reserved
       </p>

@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 import { ToastContainer, toast } from "react-toastify";
 
 import PlaceOrder from "./Pages/PlaceOrder";
+import Order from "./Pages/Order";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Cart" element={<Cart />} />
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/place-order" element={<PlaceOrder />} />
+        <Route path="/Order" element={<Order />} />
       </Routes>
       <Footer />
     </div>
