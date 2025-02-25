@@ -65,7 +65,9 @@ function Navbar() {
             className="text-3xl cursor-pointer hover:text-gray-600"
           />
           <div className="group relative">
-            <MdAccountCircle className="text-3xl cursor-pointer hover:text-gray-600 " />
+            <Link to={"/login"}>
+              <MdAccountCircle className="text-3xl cursor-pointer hover:text-gray-600 " />
+            </Link>
             <div className="group-hover:block hidden absolute dropdown-menu left-0 pt-2">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-200 text-gray-500 rounded">
                 <p className="cursor-pointer  hover:text-black text-xl">
@@ -84,8 +86,8 @@ function Navbar() {
             <div>
               <FaShoppingCart className="text-3xl cursor-pointer  hover:text-gray-600" />
             </div>
-            <div className=" rounded-full  ">
-              <sup className="ml-[-8px] absolute mt-[1px] text-yellow-700 font-extrabold text-xl">
+            <div className="    ">
+              <sup className="ml-[-10px] absolute bg-black h-[22px] flex items-center justify-center rounded-full w-[22px] mt-[2px] text-white font-extrabold ">
                 {getcartcount()}
               </sup>
             </div>
@@ -129,45 +131,37 @@ function Navbar() {
         <div className="flex flex-col justify-between text-3xl mt-2 gap-1 ">
           <NavLink
             onClick={() => {
-              {
-                visible ? <Home /> : "";
-              }
+              visible ? <Home /> : "";
             }}
             className="shadow shadow-gray-400 pl-2  "
-            to={"/"}
+            to="/"
           >
             Home
           </NavLink>
           <NavLink
             onClick={() => {
-              {
-                visible ? <About /> : "";
-              }
+              visible ? <About /> : "";
             }}
             className="shadow shadow-gray-400 pl-2  "
-            to={"/About"}
+            to="/About"
           >
             About
           </NavLink>
           <NavLink
             onClick={() => {
-              {
-                visible ? <Collection /> : "";
-              }
+              visible ? <Collection /> : "";
             }}
             className="shadow shadow-gray-400 pl-2  "
-            to={"/Collection"}
+            to="/Collection"
           >
             Collection
           </NavLink>
           <NavLink
             onClick={() => {
-              {
-                visible ? <Contact /> : "";
-              }
+              visible ? <Contact /> : "";
             }}
             className="shadow shadow-gray-400 pl-2  "
-            to={"/Contact"}
+            to="/Contact"
           >
             Contact
           </NavLink>

@@ -6,6 +6,7 @@ import { ShopContext } from "../Context/ShopContext.jsx";
 
 const PlaceOrder = () => {
   const { navigate } = useContext(ShopContext);
+
   return (
     <div className="mt-16 flex items-center justify-between">
       {/* left part */}
@@ -15,11 +16,13 @@ const PlaceOrder = () => {
           <input
             className="border rounded p-2 w-[250px]"
             type="text"
+            required
             placeholder="Firstname"
           />
           <input
             className="border rounded p-2 w-[250px] "
             type="text"
+            required
             placeholder="Lastname"
           />
         </div>
@@ -27,6 +30,7 @@ const PlaceOrder = () => {
           <input
             className=" border rounded p-2  w-full"
             type="email"
+            required
             placeholder="Email Address"
           />
         </div>
@@ -34,6 +38,7 @@ const PlaceOrder = () => {
           <input
             className=" border rounded p-2 w-full"
             type="text"
+            required
             placeholder="Street"
           />
         </div>
@@ -41,11 +46,13 @@ const PlaceOrder = () => {
           <input
             className=" border rounded p-2 w-[250px]"
             type="text"
+            required
             placeholder="City"
           />
           <input
             className=" border rounded p-2 w-[250px]"
             type="text"
+            required
             placeholder="State"
           />
         </div>
@@ -53,11 +60,13 @@ const PlaceOrder = () => {
           <input
             className=" border rounded p-2 w-[250px]"
             type="number"
+            required
             placeholder="Zipcode"
           />
           <input
             className=" border rounded p-2 w-[250px]"
             type="text"
+            required
             placeholder="Country"
           />
         </div>
@@ -65,6 +74,7 @@ const PlaceOrder = () => {
           <input
             className=" border rounded p-2 w-full"
             type="number"
+            required
             placeholder="Phone"
           />
         </div>
@@ -77,7 +87,7 @@ const PlaceOrder = () => {
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2  px-6 py-1">
-            <p className="rounded-full border w-3 h-3 "></p>
+            <p className="rounded-full border w-3 h-3  "></p>
             <img className="w-[60px]" src={assets.stripe_logo} />
           </div>
           <div className="flex items-center gap-2  px-6 py-1">
@@ -91,7 +101,9 @@ const PlaceOrder = () => {
         </div>
         <div className=" hover:bg-gray-700 rounded-sm mt-4 bg-black text-white px-5 py-2">
           <button
-            onClick={() => navigate("./Order")}
+            onClick={() => {
+              navigate("./Order");
+            }}
             className=" cursor-pointer "
           >
             PLACE ORDER
